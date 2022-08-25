@@ -1,64 +1,63 @@
+const generateMarkdown = require("./Develop/utils/generatemarkdown.js")
 const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-const generateREADME = ({ projectTitle, projectDescription, installationRequirements, usage, contributionReqs, license, licenseLink, tests, github, linkedin, email }) =>
-  `# ${projectTitle}
-  
-  ## Project Description:
+const generateMarkdown = ({ projectTitle, projectDescription, installationRequirements, usage, contributionReqs, license, licenseLink, tests, github, linkedin, email }) =>
+  `
+  # ${projectTitle}
 
-  
-  This application is licensed with <a href="${licenseLink}">${license}</a>. 
-  
+## Description
 
-  <h2 id="description">Description:</h2>
-  <br>
-    ${projectDescription}
-  <br>
 
-  - <a href="#description">Description</a><br>
-  - <a href="#installation">Installation</a><br>
-  - <a href="#usage">Usage Instructions</a><br>
-  - <a href="#contribution">Constribution</a><br>
-  - <a href="#tests">Tests</a><br>
-  - <a href="#questions">Questions</a><br>
-  - <a href="#license">License Info</a><br>
 
-  <h2 id="installation">Installation:</h2>
-  <br>
-      ${installationRequirements}
-  <br>
+${projectDescription}
 
-  <h2 id="usage">Usage:</h2>
-  <br>
-      ${usage}
-  <br>
-    
-  ## Links
+${licenseLink}
 
-  My github link <a href="https://github.com/${github}">${github}</a>. \ 
-  My LinkedIN is <a href="https://github.com/${linkedin}">${linkedin}</a>.
 
-  <h2 id="contribute">Contributions:</h2>
-  <br>
-      ${contributionReqs}
-  <br>
+## Table of Contents 
 
-    
-  <h2 id="tests">Tests:</h2>
-  <br>
-      ${tests}
-  <br>
-    
-  ## Questions
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-  If you have any questions contact me via:
+## Installation
 
-  Email: ${email}. <br>
-  Github: <a href="https://github.com/${github}">${github}</a>.
+${installationRequirements}
+
+## Usage
+
+${usage}
+
+## Credits
+
+${contributionReqs}
+
+## License
+
+Here is the link to the license for <a href="${licenseLink}">${license}</a>.
+
+---
+
+## Tests
+
+${tests}
+
+Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+
+## Questions
+
+If you would like to contact me for any questions or possible freelance work reach out to me to my links:
+- <a href="${github}">Github</a>
+- <a href="${linkedin}">LinkedIn</a>
+- <a href="${email}">Email.</a>
 
   `;
 
+// TODO: Create a function to initialize app
+function init() {
 inquirer
 .prompt([
   {
@@ -69,7 +68,7 @@ inquirer
   {
     type: 'input',
     name: 'projectDescription',
-    message: 'What is a short description of the Project? (Use (\) to create new lines)',
+    message: 'What is a short description of the Project? (Use (\) to create new lines)'
   },
   {
     type: 'input',
@@ -112,28 +111,15 @@ inquirer
     message: 'Enter best email for contact.',
   },
 ])
-.then((answers) => {
-  const readmeContent = generateREADME(answers);
 
-  if (answers.license == `MIT`) {
-    link = `https://a.shields.io/badge/License-MIT-yellow`;
-    url = `https://opensource.org/licenses/MIT`;
-    console.log(answers.license)
-} else if (answers.license == `IBM`) {
-    link = `https://a.shields.io/badge/License-IPL%201.0-blue`;
-    url = `https://opensource.org/licenses/IPL-1.0`;
-    console.log(answers.license)
-} else if (answers.license == `Apache`) {
-    link = `https://a.shields.io/badge/License-Apache%202.0-yellowgreen`;
-    url = `https://www.apache.org/licenses/LICENSE-2.0`;
-    console.log(answers.license)
-} else if (answers.license == `BSD 3`) {
-    link = `https://a.shields.io/badge/License-BSD%203--Clause-orange`;
-    url = `https://opensource.org/licenses/BSD-3-Clause`;
-    console.log(answers.license)
-};
-
-  fs.writeFile('savedREADME.md', readmeContent, (err) =>
-    err ? console.log(err) : console.log('Successfully created the README File!')
-  );
+.then((data) => {
+    writeToFile("savedREADME.md", generateMarkdown(data))
 });
+
+}
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) =>
+  err ? console.log(err) : console.log('Success!'))
+}
