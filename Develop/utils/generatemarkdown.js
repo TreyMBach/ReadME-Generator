@@ -1,14 +1,20 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  switch (license) {
+    case "MIT":
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    case "BSD 3":
+      return "[![License: BSD 3](https://img.shields.io/badge/License-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+    case "IBM":
+      return "[![License: IBM](https://img.shields.io/badge/License-IBM-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+    case "Apache 2.0":
+      return "[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+    default:
+      return "";
+  }
+}
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -20,7 +26,7 @@ function generateMarkdown(data) {
 
 ${data.projectDescription}
 
-${data.licenseLink}
+${renderLicenseSection(data.license)}
 
 
 ## Table of Contents 
@@ -29,6 +35,8 @@ ${data.licenseLink}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Tests](#tests)
+- [Questions](#Questions)
 
 ## Installation
 
@@ -44,7 +52,7 @@ ${data.contributionReqs}
 
 ## License
 
-Here is the link to the license for <a href="${data.licenseLink}">${data.license}</a>.
+This is under the ${renderLicenseSection(data.license)} license.
 
 ---
 
@@ -52,16 +60,15 @@ Here is the link to the license for <a href="${data.licenseLink}">${data.license
 
 ${data.tests}
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
 
 ## Questions
 
 If you would like to contact me for any questions or possible freelance work reach out to me to my links:
-- <a href="${data.github}">Github</a>
-- <a href="${data.linkedin}">LinkedIn</a>
-- <a href="${data.email}">Email.</a>`
+- https://github.com/${data.github}
+- ${data.linkedin}
+- ${data.email}
 
-
+`
 }
 
 module.exports = generateMarkdown;

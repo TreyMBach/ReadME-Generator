@@ -2,60 +2,6 @@ const generateMarkdown = require("./Develop/utils/generatemarkdown.js")
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
-const generateMarkdown = ({ projectTitle, projectDescription, installationRequirements, usage, contributionReqs, license, licenseLink, tests, github, linkedin, email }) =>
-  `
-  # ${projectTitle}
-
-## Description
-
-
-
-${projectDescription}
-
-${licenseLink}
-
-
-## Table of Contents 
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-${installationRequirements}
-
-## Usage
-
-${usage}
-
-## Credits
-
-${contributionReqs}
-
-## License
-
-Here is the link to the license for <a href="${licenseLink}">${license}</a>.
-
----
-
-## Tests
-
-${tests}
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-
-## Questions
-
-If you would like to contact me for any questions or possible freelance work reach out to me to my links:
-- <a href="${github}">Github</a>
-- <a href="${linkedin}">LinkedIn</a>
-- <a href="${email}">Email.</a>
-
-  `;
-
 // TODO: Create a function to initialize app
 function init() {
 inquirer
@@ -93,7 +39,7 @@ inquirer
   {
     name: 'license',
     type: 'list',
-    choices: ['Apache', 'BSD 3', 'IBM', 'MIT']
+    choices: ['Apache 2.0', 'BSD 3', 'IBM', 'MIT', 'None']
   },
   {
     name: 'tests',
@@ -123,3 +69,5 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
   err ? console.log(err) : console.log('Success!'))
 }
+
+init()
