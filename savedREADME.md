@@ -1,12 +1,12 @@
 
   
-# Demo
+# ReadMe Gen
 
 ## Description
 
-Demo
+Generate readme based off input
 
-[![License: IBM](https://img.shields.io/badge/License-IBM-blue.svg)](https://opensource.org/licenses/IPL-1.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Table of Contents 
@@ -20,31 +20,31 @@ Demo
 
 ## Installation
 
-Demo
+Inquirer
 
 ## Usage
 
-Demo
+Integrated Term.
 
 ## Credits
 
-Demo
+None
 
 ## License
 
-This is under the [![License: IBM](https://img.shields.io/badge/License-IBM-blue.svg)](https://opensource.org/licenses/IPL-1.0) license.
+This is under the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) license.
 
 ---
 
 ## Tests
 
-Demo
+None
 
 
 ## Questions
 
 If you would like to contact me for any questions or possible freelance work reach out to me to my links:
-- https://github.com/
-- Demo
-- Demo
+- https://github.com/TreyMBach
+- https://www.linkedin.com/in/trey-bach-191183200/
+- treybachyt@gmail.com
 

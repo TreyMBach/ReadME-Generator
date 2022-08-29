@@ -2,7 +2,7 @@ const generateMarkdown = require("./Develop/utils/generatemarkdown.js")
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create a function to initialize app
+// TODO: Uses 
 function init() {
 inquirer
 .prompt([
