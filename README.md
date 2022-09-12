@@ -23,6 +23,8 @@ Inquirer, NPM, and all the node modules.
 
 You would this in the Integrated Terminal and put in user input to the questions to generate a professional readme.
 
+Here is a video on how to generate your README.md file: https://drive.google.com/file/d/1Fr7R9tOpklfXSSMIsfvXKAysTC4rSz-1/view
+
 ![](images/HomePage.PNG)
 
 ![](images/InputPage.PNG)

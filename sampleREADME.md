@@ -1,10 +1,10 @@
 
   
-# ReadMe Gen
+# Generate Readme
 
 ## Description
 
-Generate readme based off input
+To generate readme off of input
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -24,7 +24,7 @@ Inquirer
 
 ## Usage
 
-Integrated Term.
+In terminal
 
 ## Credits
 
@@ -45,6 +45,6 @@ None
 
 If you would like to contact me for any questions or possible freelance work reach out to me to my links:
 - https://github.com/TreyMBach
-- https://www.linkedin.com/in/trey-bach-191183200/
+- URL
 - treybachyt@gmail.com
 

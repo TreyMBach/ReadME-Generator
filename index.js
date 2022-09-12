@@ -59,7 +59,7 @@ inquirer
 ])
 
 .then((data) => {
-    writeToFile("savedREADME.md", generateMarkdown(data))
+    writeToFile("sampleREADME.md", generateMarkdown(data))
 });
 
 }
