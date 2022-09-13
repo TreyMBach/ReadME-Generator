@@ -1,8 +1,9 @@
+// Imports for the inquirer and fs along with the markdown file.
 const generateMarkdown = require("./Develop/utils/generatemarkdown.js")
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Uses 
+// TODO: Initialization to start the prompt.
 function init() {
 inquirer
 .prompt([
@@ -57,14 +58,14 @@ inquirer
     message: 'Enter best email for contact.',
   },
 ])
-
+//.then file to use the imputs 'data' to make a readme
 .then((data) => {
     writeToFile("sampleREADME.md", generateMarkdown(data))
 });
 
 }
 
-// TODO: Create a function to write README file
+// A function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
   err ? console.log(err) : console.log('Success!'))

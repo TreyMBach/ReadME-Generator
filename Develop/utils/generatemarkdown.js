@@ -1,5 +1,5 @@
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+
+// Uses a switch function to have the input of 'license' to return the readme with the the badge and link for the license.
 function renderLicenseSection(license) {
   switch (license) {
     case "MIT":
@@ -16,7 +16,7 @@ function renderLicenseSection(license) {
 }
 
 
-// TODO: Create a function to generate markdown for README
+// A function to generate markdown for README
 function generateMarkdown(data) {
   return `
   
